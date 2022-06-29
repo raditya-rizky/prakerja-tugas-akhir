@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #717171;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.2rem;
+}
+
+/* CSS Navbar */
+nav {
+  background-color: #202121;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  -webkit-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+#logo {
+  flex: 1;
+  font-family: "Abril Fatface", cursive;
+  padding-left: 4rem;
+  font-size: 2rem;
+  text-shadow: 0 0 15px;
+  animation: logo 1s infinite linear;
+}
+
+#nav {
+  display: flex;
+  flex: 1;
+  padding: 1.2em;
+  padding-right: 4em;
+  justify-content: flex-end;
+}
+
+li {
+  list-style: none;
+  padding-left: 1.8em;
+}
+
+#nav li a {
+  text-decoration: none;
+  color: #f4f7f6;
+  font-weight: 400;
+}
+
+#menu {
+  margin: 1rem;
+  display: none;
+}
+
+#menu img {
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+#menu img:hover {
+  transform: scale(1.3);
+}
+
+#close {
+  display: none;
+}
+
+#close img {
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.6rem;
+  transition: 0.3s all;
+}
+
+#close img:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+/* keyframes */
+@keyframes logo {
+  0%,
+  100% {
+    color: deeppink;
+  }
+
+  25% {
+    color: deepskyblue;
+  }
+
+  50% {
+    color: lawngreen;
+  }
+
+  75% {
+    color: yellow;
+  }
+}
+
+/* CSS Media (responsive)*/
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1000px) {
+  #nav {
+    padding: 1em;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    width: 80%;
+    z-index: 1;
+    background-color: rgb(156, 156, 252);
+    transform: translateX(-120%);
+    transition: 0.5s all;
+    order: 1;
+    flex: 1;
+  }
+
+  #logo {
+    order: 2;
+    flex: 1;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 55%;
+  }
+
+  #nav.slide {
+    transform: translateX(0);
+  }
+
+  #menu {
+    display: contents;
+  }
+
+  #close {
+    display: contents;
+  }
+
+  nav {
+    height: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 00.7rem;
+  }
+}
